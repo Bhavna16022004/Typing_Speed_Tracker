@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Speed Tracker</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle, rgb(231, 163, 193) 0%, rgb(65, 86, 111) 100%);
+      color: black;
+      /* transition: background-color 0.3s, color 0.3s; */
+    }
+
+    body.dark-mode {
+      background: radial-gradient(circle, rgb(37, 19, 26) 0%, rgb(37, 52, 69) 100%);
+      color: white;
+    }
+   
+
+    .header {
+      background: radial-gradient(circle, rgb(99, 62, 79) 0%, rgb(8, 13, 18) 100%);
+      color: white;
+      text-shadow: 2px 3px 4px #070707;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      padding: 5px;
+      border: 2px solid white;
+    }
+
+    #darkModeToggle {
+      background-color: #fbf7f7;
+        color: #0c0c0c;
+        border: none;
+       height: 35px;
+       width: 100px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s;
+    }
+
+    #darkModeToggle:hover {
+      background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    }
+
+    .setting {
+      max-width: 90%;
+      width: 800px;
+      background: radial-gradient(circle, rgb(142, 23, 75) 0%, rgb(172, 192, 215) 100%);
+      text-align: center;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .dark-mode .setting {
+      background: radial-gradient(circle, rgba(42, 28, 34, 0.225) 0%, rgb(43, 58, 77) 100%);
+      color: white; /* Text color for dark mode */
+    }
+
+.dark-mode h1{
+  color:  white;
+}
+    
+    h1 {
+      margin-top: 20px;
+      font-size: 2.5rem;
+      text-shadow: 2px 1px 2px #3f2c2c;
+      color:rgb(31, 91, 96);
+      font-family: 'Courier New', Courier, monospace;
+      
+    }
+
+    button {
+      height: 40px;
+      width: 150px;
+      background-color: rgb(32, 63, 63);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: radial-gradient(circle, rgb(178, 75, 120) 0%, rgba(148,187,233,1) 100%);
+  color: black;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .setting {
+        width: 100%;
+        padding: 15px;
+      }
+
+      button {
+        width: 120px;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd07M3GRSUFJF9JB3xBlF9PAHgywan3W9X30pRvTqHCjxDFhowpVqIZ-75PAizie3xcuI&usqp=CAU" alt="Typing illustration">
+    
+    <button id="darkModeToggle">Dark</button>
+  </header>
+
+  <main>
+    <div class="setting">
+      <h1>Welcome to the Typing Speed Tracker</h1>
+      <img src="https://static.vecteezy.com/system/resources/previews/015/922/211/non_2x/young-woman-with-typing-keyboard-looks-at-screen-while-typing-e-mail-message-girl-blogger-or-internet-programmer-working-in-casual-clothes-fulfilling-order-from-freelance-exchange-flat-image-vector.jpg" alt="Typing illustration"><br><br>
+      <a href="index3.html"><button>Own Text</button></a>
+      <a href="index2.html"><button>Custom Text</button></a>
+    </div>
+  </main>
+
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const currentMode = document.body.classList.contains('dark-mode') ? 'Light' : 'Dark';
+      darkModeToggle.textContent = currentMode;
+    });
+  </script>
+</body>
+</html>

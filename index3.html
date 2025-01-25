@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Own text</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: auto;
+            background: radial-gradient(circle, rgb(231, 163, 193) 0%, rgb(65, 86, 111) 100%);
+            color: black;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+      background: radial-gradient(circle, rgb(37, 19, 26) 0%, rgb(37, 52, 69) 100%);
+      color: rgb(249, 239, 239);
+    }
+    
+   label {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+   }
+
+
+    .header {
+        background: radial-gradient(circle, rgb(99, 62, 79) 0%, rgb(8, 13, 18) 100%);
+        color: white;
+      text-shadow: 2px 3px 4px #070707;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo{
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      padding: 5px;
+      border: 2px solid white;
+    }
+
+    .setting {
+      max-width: 90%;
+      width: 800px;
+      background: radial-gradient(circle, rgb(142, 23, 75) 0%, rgb(172, 192, 215) 100%);
+      text-align: center;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .dark-mode .setting {
+        background: radial-gradient(circle, rgba(42, 28, 34, 0.225) 0%, rgb(43, 58, 77) 100%);
+        color: rgb(243, 240, 240); /* Text color for dark mode */
+    
+    }
+
+    h1 {
+      margin: 20px;
+      font-size: 2.3rem;
+      text-shadow: 2px 1px 2px #3f2c2c;
+      color:rgb(31, 91, 96);
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .dark-mode h1{
+        color: white;
+    }
+        select {
+            width: 200px;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid lightgray;
+            border-radius: 25px;
+            margin: 20px 0;
+        }
+
+        textarea {
+            width: 90%;
+            height: 300px;
+            border: 2px solid lightgray;
+            border-radius: 15px;
+            padding: 15px;
+            font-size: 16px;
+            margin-top: 20px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+        }
+      
+    
+        #restartTest {
+            height: 40px;
+            width: 150px;
+            background-color: darkcyan;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: radial-gradient(circle, rgb(210, 100, 148) 0%, rgb(100, 142, 189) 100%);
+        }
+
+        span{
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+         .stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+         }
+
+            select {
+                width: 120px;
+                padding: 5px;
+                font-size: 14px;
+                border-radius: 15px;
+                margin: 10px 0;
+            }
+
+            textarea {
+                width: 100%;
+                height: 300px;
+            }
+        
+            .setting {
+            width: 96%;
+            max-width: 700px;}
+        
+
+       
+       
+
+        #darkModeToggle:hover {
+            background-color: teal;
+        }
+
+        .home {
+            background-color: #fbf7f7;
+            color: #0c0c0c;
+            border: none;
+            height: 35px;
+            width: 100px;
+            border-radius: 10px;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+#pauseResumeTest{
+    font-size: 30px;
+}
+
+@media (max-width: 600px) {
+    h1{
+        font-size: 20px;
+        margin:5px
+    }
+}
+     
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd07M3GRSUFJF9JB3xBlF9PAHgywan3W9X30pRvTqHCjxDFhowpVqIZ-75PAizie3xcuI&usqp=CAU" alt="Typing illustration">
+       <nav>
+        <a href="index.html"><button class="home">Home</button></a>
+        <button id="darkModeToggle" class="home">Dark</button>
+    </nav>
+      </header>
+
+    <main>
+
+        <div class="setting">
+            <h1>Check your typing skills in a minute</h1>
+            <label for="testDuration">Test Duration:</label>
+            <select id="testDuration">
+                <option value="1">1 Minute</option>
+                <option value="3">3 Minutes</option>
+                <option value="5">5 Minutes</option>
+                <option value="10">10 Minutes</option>
+            </select>
+
+            <br>
+
+            <div class="stats">
+                <span id="timer">⏰ Timer 00:00</span>
+                <span id="wpm">WPM: 0</span>
+            </div>
+            <textarea id="typingInput" class="typing-input" placeholder="Start typing here..." disabled></textarea>
+           
+           
+            <button id="restartTest">Reset</button>
+        </div>
+    </main>
+
+    <script>
+        const restartTestButton = document.getElementById('restartTest');
+        const typingInput = document.getElementById('typingInput');
+        const timerDisplay = document.getElementById('timer');
+        const wpmDisplay = document.getElementById('wpm');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+    
+        let timer;
+        let timeLeft;
+        let testStarted = false;
+        let timerPaused = false;
+    
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+        }
+        
+        let startTime = null; // Record when typing starts
+ timeLeft = parseInt(document.getElementById('testDuration').value) * 60; // Total test duration in seconds
+
+function calculateWPM() {
+    if (!startTime) {
+        startTime = new Date();
+    }
+
+    const words = typingInput.value.trim().split(/\s+/);
+    const validWords = words.filter(word => word.length >= 4); // Consider words with 4+ characters
+    const totalWords = validWords.length;
+
+    // Calculate elapsed time in seconds
+    const elapsedSeconds = (new Date() - startTime) / 1000;
+    const elapsedMinutes = elapsedSeconds / 60;
+
+    // Calculate WPM
+    const wpm = elapsedMinutes > 0 ? Math.floor(totalWords / elapsedMinutes) : 0;
+
+    // Update the UI
+    wpmDisplay.textContent = `WPM: ${wpm}`;
+
+    return wpm;
+}
+
+// Call this function whenever the user types something
+typingInput.addEventListener('input', calculateWPM);
+
+
+        function startTimer() {
+            timer = setInterval(() => {
+                if (!timerPaused) {
+                    timeLeft--;
+                    timerDisplay.textContent = `⏰ Timer: ${formatTime(timeLeft)}`;
+                    wpmDisplay.textContent = `WPM: ${calculateWPM()}`;
+    
+                    if (timeLeft <= 0) {
+                        clearInterval(timer);
+                        typingInput.disabled = true;
+                    }
+                }
+            }, 1000);
+        }
+    
+        typingInput.addEventListener('input', () => {
+            if (!testStarted) {
+                testStarted = true;
+                timeLeft = parseInt(document.getElementById('testDuration').value) * 60;
+                timerDisplay.textContent = `⏰ Timer: ${formatTime(timeLeft)}`;
+                startTimer();
+            }
+        });
+    
+        const pauseResumeButton = document.createElement('button');
+        pauseResumeButton.id = 'pauseResumeTest';
+        pauseResumeButton.textContent = "⏸️";
+        pauseResumeButton.title = "Pause"; // Initial tooltip
+        document.querySelector('.stats').appendChild(pauseResumeButton);
+        
+        pauseResumeButton.addEventListener('click', () => {
+            if (timerPaused) {
+            timerPaused = false;
+            typingInput.disabled = false;
+            pauseResumeButton.textContent = "⏸️";
+            pauseResumeButton.title = "Pause"; // Tooltip for pause
+            } else {
+            timerPaused = true;
+            typingInput.disabled = true;
+            pauseResumeButton.textContent = "▶️";
+            pauseResumeButton.title = "Resume"; // Tooltip for resume
+            }
+        });
+    
+        restartTestButton.addEventListener('click', () => {
+            clearInterval(timer);
+            testStarted = false;
+            timerPaused = false;
+            timeLeft = 0;
+            timerDisplay.textContent = `⏰ Timer: ${formatTime(0)}`;
+            wpmDisplay.textContent = `WPM: 0`;
+            typingInput.disabled = false;
+            typingInput.value = '';
+        });
+    
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const currentMode = document.body.classList.contains('dark-mode') ? 'Light' : 'Dark';
+            darkModeToggle.textContent = currentMode;
+        });
+    
+        // Automatically enable the input area when the page loads
+        window.addEventListener('load', () => {
+            typingInput.disabled = false;
+        });
+    </script>
+    </body>
+</html>
